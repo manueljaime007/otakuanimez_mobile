@@ -27,7 +27,7 @@ export default function index() {
 
     const timeout = setTimeout(() => {
       router.replace("/onboarding")
-    }, 5000)
+    }, 2500)
     return () => clearTimeout(timeout)
 
   }, [router, scaleAnim, fadeAnim])

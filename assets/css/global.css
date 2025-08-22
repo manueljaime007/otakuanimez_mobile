@@ -1,0 +1,12 @@
+/* p {
+    --Primária: #6366F1; 
+    --Secundária: #F43F5E;
+    --Fundo-principal: #0F172A;
+    --Texto-primário: #F8FAFC;
+    --Texto-secundário: #CBD5E1;
+    --Bordas-detalhes: #334155;
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

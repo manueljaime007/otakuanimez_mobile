@@ -32,7 +32,7 @@ export default function Onboarding() {
                 keyExtractor={(item) => item.id}
                 horizontal
                 pagingEnabled
-                showsHorizontalScrollIndicator={false}
+                // showsHorizontalScrollIndicator={false}
                 onMomentumScrollEnd={(e) => {
                     const index = Math.round(e.nativeEvent.contentOffset.x / width);
                     setCurrentIndex(index);
@@ -52,7 +52,6 @@ export default function Onboarding() {
         </View>
     );
 }
-
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: "#fff" },
     slide: { flex: 1, alignItems: "center", justifyContent: "center", padding: 20 },
