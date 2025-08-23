@@ -1,8 +1,10 @@
-import { Text, View, StyleSheet, Animated, Easing } from 'react-native'
+import { Text, View, StyleSheet, Animated, Easing, Image } from 'react-native'
 import { useEffect, useRef } from 'react'
 import { useRouter } from 'expo-router'
 
-export default function index() {
+const logo = require("@/assets/images/app-logo.png")
+
+export default function Index() {
 
   const router = useRouter()
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -26,26 +28,36 @@ export default function index() {
     ]).start()
 
     const timeout = setTimeout(() => {
-      router.replace("/onboarding")
-    }, 2500)
+      router.replace("/login")
+    }, 2500*0)
     return () => clearTimeout(timeout)
 
   }, [router, scaleAnim, fadeAnim])
 
   return (
     <View style={styles.container}>
-      <Animated.Text
-        style={[
-          styles.logo,
-          {
-            opacity: fadeAnim,
-            color: "white",
-            transform: [{ scale: scaleAnim }],
-          },
-        ]}
-      >
-        Meu App 🚀
-      </Animated.Text>
+      <View style={{
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: 100
+      }}>
+        <Image
+          source={logo}
+          style={{width: 150, height: 150, resizeMode: "cover"}}
+        />
+        <Animated.Text
+          style={[
+            styles.logo,
+            {
+              opacity: fadeAnim,
+              color: "white",
+              transform: [{ scale: scaleAnim }],
+            },
+          ]}
+        >
+         Otaku<Text style={{ color: "#D63F3F"}}>Animez</Text>
+        </Animated.Text>
+      </View>
     </View>
   )
 }
